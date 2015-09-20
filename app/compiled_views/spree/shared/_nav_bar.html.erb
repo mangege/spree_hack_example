@@ -1,0 +1,13 @@
+<nav class="navbar col-md-8" id="top-nav-bar">
+  <ul id="nav-bar" class="nav navbar-nav navbar-right" data-hook>
+    <% if spree_current_user %>
+  <li><%= link_to Spree.t(:my_account), spree.account_path %></li>
+  <li><%= link_to Spree.t(:logout), spree.logout_path %></li>
+<% else %>
+  <li id="link-to-login"><%= link_to Spree.t(:login), spree.login_path %></li>
+<% end %>
+<li id="search-bar" data-hook>
+      <%= render :partial => 'spree/shared/search' %>
+    </li>
+  </ul>
+</nav>
